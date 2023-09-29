@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Kullanılacak Veritabanı Sürücüsünün Adı       -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!--  ConnectionString       -->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/java11eticaret</property>
+        <!--  Kullanıcı Adı , yetkili kullanıcı      -->
+        <property name="hibernate.connection.username">postgres</property>
+        <!--  Şifre      -->
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
+        <!--  update -> Entity lerinize bakar eğer bunlara karşılık gelen tablolar DB de var ise
+                        olduğu gibi bırakır. Eğer tablolar yok ise varlıklara ait tabloları oluşturur.
+              create -> Entity lerinize ait tüm tabloları, uygulama her başladığında tekrar tekrar oluşturur.
+                        DİKKAT!! bir uygulamada create kullanılır ise veritabanında olan veriler tamamen silinir.
+              create/drop -> Her seferinde tabolar oluşturulur, uygulama kapatılırken tüm tablolar silinir.
+         -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!--  Hibernate bizim adımıza SQL komutlarını yazmaktadır, bu yazmakta olduğu SQL kodlarını
+              konsol ekranında görebilmek için bunu aktif ederiz.
+        -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <!--    Hibernate in haritalayacağı tüm Java Sınıflarını belirtiyoruz.
+                DİKKAT!! kafanıza göre her sınıfı haritalayamazsınız. çünkü hibernate
+                @Entity ile işaretlenmemiş hiç bir sınıfı kullanamaz.
+        -->
+
+        <mapping class="com.muhammet.repository.entity.Musteri"></mapping>
+        <mapping class="com.muhammet.repository.entity.Satis"></mapping>
+        <mapping class="com.muhammet.repository.entity.SatisDetay"></mapping>
+        <mapping class="com.muhammet.repository.entity.Sepet"></mapping>
+        <mapping class="com.muhammet.repository.entity.Urun"></mapping>
+
+
+
+
+    </session-factory>
+</hibernate-configuration>
