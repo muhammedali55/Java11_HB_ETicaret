@@ -1,5 +1,6 @@
 package com.muhammet;
 import com.muhammet.criteriaornekleri.CriteriaOrnekleri;
+import com.muhammet.enums.ECinsiyet;
 import com.muhammet.repository.UrunRepository;
 import com.muhammet.repository.entity.*;
 
@@ -23,6 +24,8 @@ public class Main {
 //        });
 
 
+        CriteriaOrnekleri cr = new CriteriaOrnekleri();
+        System.out.println("Toplam ürün fiyat bilgisi.....: "+cr.getTotalPrice());
 
     }
 }

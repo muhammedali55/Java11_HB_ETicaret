@@ -33,6 +33,8 @@
         <mapping class="com.muhammet.repository.entity.SatisDetay"></mapping>
         <mapping class="com.muhammet.repository.entity.Sepet"></mapping>
         <mapping class="com.muhammet.repository.entity.Urun"></mapping>
+        <mapping class="com.muhammet.repository.views.VwUrun"></mapping>
+
 
 
 
